@@ -96,7 +96,8 @@ def main():
         if os.path.exists(folder_name):
             pass
         else:
-            folder_name = input("Если папка будет не найдена - тут сообщение, которое спросит имя папки: ")
+            while os.path.exists(folder_name) == False:
+                folder_name = input("Если папка будет не найдена - тут сообщение, которое спросит имя папки: ")
 
         archive_folder(folder_name, archive_name)
         encrypt_file(archive_name + '.zip', key)
